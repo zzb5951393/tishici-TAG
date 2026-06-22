@@ -6,7 +6,7 @@
 
 1. 把实际效果好的提示词追加到 `prompts/` 对应分类中。
 2. 将可复用的表达、结构、负面约束和参数写入 `rules/`。
-3. 如果是“参考图内容不变、只改风格、固定正交斜俯视游戏视角”的任务，优先使用 `rules/reference-style-orthographic-game-view.md`。
+3. 如果是“参考图内容不变、只改风格、固定建筑正面角度正交俯视游戏视角”的任务，优先使用 `rules/reference-style-orthographic-game-view.md`。
 4. 如果用户明确说用 ChatGPT / GPT / ChatGPT image2 绘图，优先参考 `rules/chatgpt-gpt-image-prompting-guide.md`。
 5. 当你提出新需求时，先从 `rules/` 提取规律，再从 `prompts/` 参考相近案例，最后按 `templates/drawing-prompt-template.md` 输出完整提示词。
 
@@ -41,3 +41,6 @@
 - 同类提示词不要只堆案例，要总结“为什么有效”。
 - 对 nanobanana、ChatGPT 等不同工具的偏好要单独记录，避免混用导致风格漂移。
 - 优先沉淀可迁移的规律：构图、光影、镜头、材质、角色特征、场景氛围。
+- 生成场景类提示词时，默认不要输出像素风格；参考图如果是像素图，也只参考布局、视角和结构，不继承像素画风。
+- 场景类建筑视角默认固定为建筑正面角度正交俯视：只看到一个建筑正面和一个顶面，不看到建筑侧面。
+- 每次提示词迭代和用户反馈都要记录到对应案例文档；ChatGPT / GPT / nanobanana 默认不按 SD 方式单独输出负面提示词，而是把限制条件写进完整自然语言提示词。

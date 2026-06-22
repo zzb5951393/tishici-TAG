@@ -113,6 +113,7 @@ Apply Image 2's style to Image 1 while preserving Image 1's layout. Insert the c
 - 指定字体风格、大小、颜色、位置、对比度和排版层级。
 - 对小字、密集文字、图表、标签、说明面板，优先使用 `quality="high"`。
 - 如果文字不重要或不希望出现，明确写：`No text, no labels, no watermark, no logo`。
+- 不要默认输出 SD 式单独 Negative Prompt；ChatGPT / GPT 更适合把约束自然地写进完整指令，例如 `Do not change the pose, proportions, canvas ratio, or lighting style.`
 
 ## 十、不同任务的提示词写法
 
@@ -162,6 +163,15 @@ Apply Image 2's style to Image 1 while preserving Image 1's layout. Insert the c
 - 每次只改一个变量，如“光更暖”“去掉多余树木”“恢复原背景”。
 - 关键不变项每次都要重复，不要只说“和上次一样”。
 - 记录每次测试结果：哪里漂移、哪里成功、下一版要强化什么。
+
+### 当前项目测试结论
+
+- 2026-06-17 复测修正：此前 GPT 噪点问题主要来自绘图设置，不是提示词本身的问题。
+- nanobanana PRO 和 ChatGPT 使用同一去噪优化提示词时效果接近，风格都更接近原参考图。
+- 因此不要过度归因于平台差异；后续先检查模型、质量、重绘强度、参考图权重和输出设置，再判断提示词问题。
+- 如果仍出现噪点，再补充：`低噪点、无颗粒感、无脏污纹理、干净色块、平滑渐变、不要随机纹理、不要过度锐化、不要杂色斑点`。
+- 2026-06-22 角色三视图换装复测：GPT 自动分辨率可能输出 1:1 方图并造成三视图人物比例变形；角色三视图任务必须显式写明参考图原始横向比例、推荐 16:9 / 2048×1152 或同等横向尺寸，并禁止 1:1 方图、裁切、拉伸和压缩人物。
+- 同一角色三视图换装任务中，中文提示词比英文提示词更稳定；后续优先用中文完整提示词。
 
 ## 十二、ChatGPT / GPT 绘图通用模板
 

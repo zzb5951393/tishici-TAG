@@ -45,3 +45,5 @@
 ## 相关案例索引
 
 - `prompts/reference-redraw-ui-removal.md`：参考图重绘、去 UI、固定正交斜俯视游戏地图视角的废弃建筑场景案例。
+- `prompts/city-street-from-building-reference.md`：基于单体像素建筑参考图补全城市街景、商业街和街区地图的提示词案例。
+- `prompts/character-turnaround-outfit-edit.md`：角色三视图服装替换案例，保持体型、三视图结构和画布比例不变，只替换为指定服饰。
